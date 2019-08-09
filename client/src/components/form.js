@@ -6,13 +6,13 @@ import axios from 'axios'
 const RegistrationForm = ({touched, errors}) => {
 
     return(
-        <Form>
-            <h2>Registration Form</h2>
-            <Field type="text" name="username" placeholder='Username'/>
+        <Form className ='registrationForm'>
+            <h2 className='title'>Registration Form</h2>
+            <Field className='input' type="text" name="username" placeholder='Username'/>
             {touched.username && errors.username && <p>{errors.username}</p>}
-            <Field type='password' name ='password' placeholder='Password'/>
+            <Field className='input' type='password' name ='password' placeholder='Password'/>
             {touched.password && errors.password && <p>{errors.password}</p>}
-            <button type='submit'>Submit</button>
+            <button className='submitBtn' data-testid='submitBtn' type='submit'>Submit</button>
         </Form>
     ) 
 }
@@ -26,8 +26,8 @@ const FormWithFormik = withFormik({
         }
         },
         validationSchema: Yup.object().shape({
-            username: Yup.string().required(),
-            password: Yup.string().min(6).required()
+            username: Yup.string().required('Username is required'),
+            password: Yup.string().min(6).required('password is required')
         }),
         handleSubmit(values){
             axios.post('http://localhost:5000/api/register', values)
@@ -35,7 +35,7 @@ const FormWithFormik = withFormik({
                 console.log(response)
             })
             .catch(err => {
-                console.log(err)
+                console.log(err.response)
             })
             
         }

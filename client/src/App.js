@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 
 import FormWithFormik from './components/form.js'
+import NewUsers from './components/newUsers.js'
 
 class App extends React.Component {
   constructor(){
@@ -12,6 +13,7 @@ class App extends React.Component {
   return (
     <div>
       <FormWithFormik/>
+      <NewUsers />
     </div>
   );}
 }

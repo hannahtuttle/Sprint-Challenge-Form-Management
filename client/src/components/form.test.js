@@ -1,5 +1,5 @@
 import React from 'react';
-import {render, fireEvent, waitForElementToBeRemoved} from '@testing-library/react'
+import {render, fireEvent} from '@testing-library/react'
 import "@testing-library/jest-dom/extend-expect";
 import '@testing-library/react/cleanup-after-each'
 
@@ -15,6 +15,6 @@ describe('Form.js', () => {
      const title = render(<FormWithFormik />)
      title.getByText(/Registration Form/i)
     })
-
+   
 
 })
