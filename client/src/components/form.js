@@ -2,6 +2,7 @@ import React from 'react'
 import { withFormik, Form, Field } from "formik";
 import * as Yup from 'yup'
 import axios from 'axios'
+import { Link } from 'react-router-dom';
 
 const RegistrationForm = ({touched, errors}) => {
 
@@ -13,6 +14,7 @@ const RegistrationForm = ({touched, errors}) => {
             <Field className='input' type='password' name ='password' placeholder='Password'/>
             {touched.password && errors.password && <p>{errors.password}</p>}
             <button className='submitBtn' data-testid='submitBtn' type='submit'>Submit</button>
+            <p>Already have an account<Link to='/login/'>Login</Link></p>
         </Form>
     ) 
 }

@@ -16,15 +16,17 @@ const NewUser = () => {
 
 
     return(
-        <div>
+          <div>  
             <h2>Recipes</h2>
+        <div className='cardContainer'>
             {user.map(user => 
-                <div key={user.name}>
+                <div className='cards' key={user.name}>
                     <h3>{user.name}</h3>
                     <p>{user.course}</p>
                     <p>{user.technique}</p>
                 </div>
             )}
+        </div>
         </div>
     )
 }
