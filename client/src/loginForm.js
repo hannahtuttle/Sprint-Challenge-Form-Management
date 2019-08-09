@@ -7,7 +7,7 @@ const Login = ({touched, errors}) => {
 
     return(
         <div>
-             <Form className ='registrationForm'>
+             <Form >
             <h2 className='title'>Login</h2>
             <Field className='input' type="text" name="username" placeholder='Username'/>
             {touched.username && errors.username && <p>{errors.username}</p>}

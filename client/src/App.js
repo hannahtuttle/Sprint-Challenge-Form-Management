@@ -14,11 +14,11 @@ class App extends React.Component {
   render(){
   return (
     <div className='App'>
-      {/* <FormWithFormik/> */}
-      {/* <NewUsers /> */}
-      <Route exact path="/registration/" component={FormWithFormik} />
-      <Route path="/login/" component={LoginWithFormik} />
-      <Route path="/recipes/" component={NewUsers} />
+      <FormWithFormik/>
+       <NewUsers />
+      {/* <Route exact path="/registration/" component={FormWithFormik} /> */}
+      {/* <Route exact path="/login/" component={LoginWithFormik} />
+      <Route exact path="/recipes/" component={NewUsers} /> */}
     </div>
   );}
 }

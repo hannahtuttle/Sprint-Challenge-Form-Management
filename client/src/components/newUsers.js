@@ -3,6 +3,7 @@ import axios from 'axios'
 
 const NewUser = () => {
     const [user, setUser] = useState([])
+    const [button, setButton] =useState('Tried it')
 
     useEffect(() => {
         axios.get('http://localhost:5000/api/restricted/data')
@@ -13,7 +14,9 @@ const NewUser = () => {
         .catch(err => console.log('catch error', err))
     }, [])
 
-
+    const handleClick = () => {
+        setButton("Awesome")
+    }
 
     return(
           <div>  
@@ -27,6 +30,7 @@ const NewUser = () => {
                 </div>
             )}
         </div>
+        <button data-testid='awesomeBtn' onClick={handleClick}>{button}</button>
         </div>
     )
 }

@@ -14,7 +14,7 @@ const RegistrationForm = ({touched, errors}) => {
             <Field className='input' type='password' name ='password' placeholder='Password'/>
             {touched.password && errors.password && <p>{errors.password}</p>}
             <button className='submitBtn' data-testid='submitBtn' type='submit'>Submit</button>
-            <p>Already have an account<Link to='/login/'>Login</Link></p>
+            {/* <p>Already have an account<Link to='/login/'>Login</Link></p> */}
         </Form>
     ) 
 }
